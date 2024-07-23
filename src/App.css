@@ -1,0 +1,13 @@
+@media (max-width: 1024px) {
+    .lg\\:grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .lg\\:block {
+        display: none;
+    }
+
+    .fixed {
+        display: block;
+    }
+}
