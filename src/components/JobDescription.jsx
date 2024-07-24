@@ -52,7 +52,7 @@ const JobDescription = () => {
     const fetchSingleJob = async () => {
       try {
         axios.defaults.withCredentials = true;
-        const res = await axios.get(`http://localhost:8000/api/v1/job/${params.id}`);
+        const res = await axios.get(`https://takeyouoff.onrender.com/api/v1/job/${params.id}`);
         if (res.data.success) {
           dispatch(setSingleJobById(res.data.job));
           setIsApplied(res.data.job.applications.some(application => application.applicant === authUser?._id));

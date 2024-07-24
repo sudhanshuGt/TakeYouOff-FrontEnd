@@ -51,7 +51,7 @@ const CreateJobs = () => {
 
         try {
             dispatch(setLoading(true));
-            const res = await axios.post(process.env.REACT_APP_API_BASE_URL + `/api/v1/job/postjob`, input, {
+            const res = await axios.post(`https://takeyouoff.onrender.com/api/v1/job/postjob`, input, {
                 headers: {
                     'Content-Type': 'application/json'
                 },
