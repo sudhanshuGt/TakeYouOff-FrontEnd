@@ -31,9 +31,7 @@ const HeroSection = () => {
         </div>
         <div>
           <p className='text-gray-500 text-sm sm:text-base md:text-lg'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus adipisci cupiditate cum.
-            <br />
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Welcome to our job search platform, where you can easily find and apply for jobs. Use advanced filters to refine your search by location, experience, and job type.<b/> Apply directly and track your application status in one place. Start your career journey with us today!
           </p>
         </div>
         <div className='flex w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-2/5 shadow-lg border pl-3 border-gray-200 rounded-full items-center gap-4 mx-auto'>
