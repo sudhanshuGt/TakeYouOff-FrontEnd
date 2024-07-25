@@ -1,0 +1,47 @@
+[debug] [2024-07-25T06:15:12.257Z] ----------------------------------------------------------------------
+[debug] [2024-07-25T06:15:12.261Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\user\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-07-25T06:15:12.262Z] CLI Version:   13.14.0
+[debug] [2024-07-25T06:15:12.262Z] Platform:      win32
+[debug] [2024-07-25T06:15:12.262Z] Node Version:  v21.4.0
+[debug] [2024-07-25T06:15:12.263Z] Time:          Thu Jul 25 2024 11:45:12 GMT+0530 (India Standard Time)
+[debug] [2024-07-25T06:15:12.263Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-07-25T06:15:12.371Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-07-25T06:15:12.372Z] > authorizing via signed-in user (sudhanshutiwari357@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\user\Desktop\TakeYouOff\frontend
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-07-25T06:15:17.924Z] Using project from CLI flag: inscribe-d9e3b
+[debug] [2024-07-25T06:15:17.927Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/inscribe-d9e3b [none]
+[debug] [2024-07-25T06:15:18.539Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/inscribe-d9e3b 200
+[debug] [2024-07-25T06:15:18.539Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/inscribe-d9e3b {"projectId":"inscribe-d9e3b","projectNumber":"1051026563088","displayName":"TakeYouOff","name":"projects/inscribe-d9e3b","resources":{"hostingSite":"inscribe-d9e3b"},"state":"ACTIVE","etag":"1_f1bf7d1d-7064-4232-ac96-5ae5d1ac53d4"}
+[info] i  Using project inscribe-d9e3b (TakeYouOff) 
+[info] 
+=== Hosting Setup
+[debug] [2024-07-25T06:15:18.546Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/inscribe-d9e3b [none]
+[debug] [2024-07-25T06:15:18.906Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/inscribe-d9e3b 200
+[debug] [2024-07-25T06:15:18.906Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/inscribe-d9e3b {"projectId":"inscribe-d9e3b","projectNumber":"1051026563088","displayName":"TakeYouOff","name":"projects/inscribe-d9e3b","resources":{"hostingSite":"inscribe-d9e3b"},"state":"ACTIVE","etag":"1_f1bf7d1d-7064-4232-ac96-5ae5d1ac53d4"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
