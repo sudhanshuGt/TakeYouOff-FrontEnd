@@ -1,14 +1,13 @@
-import React, { useState } from 'react'
-import { Badge } from './ui/badge'
-import { Button } from './ui/button'
-import { Bookmark } from 'lucide-react'
-import { useNavigate } from 'react-router-dom'
-import { ApplyJobDialog } from './ApplyJobDialog'
-import { Avatar, AvatarImage } from './ui/avatar'
+import React, { useState } from 'react';
+import { Badge } from './ui/badge';
+import { Button } from './ui/button';
+import { useNavigate } from 'react-router-dom';
+import { ApplyJobDialog } from './ApplyJobDialog';
+import { Avatar, AvatarImage } from './ui/avatar';
 
 const Job = ({ job }) => {
     const [open, setOpen] = useState(false);
-    const navigate = useNavigate(); 
+    const navigate = useNavigate();
 
     const daysAgoFunction = (mongodbTime) => {
         const createdAt = new Date(mongodbTime);
@@ -16,42 +15,63 @@ const Job = ({ job }) => {
         const timeDifference = currentDate - createdAt;
         return Math.floor(timeDifference / (1000 * 24 * 3600));
     }
- 
+
     return (
-        <div className='p-5 rounded-md shadow-xl bg-white border border-gray-100'>
-            <div className='flex items-center justify-between'>
-                <p className='text-sm text-gray-500'>{daysAgoFunction(job?.createdAt) === 0 ? 'Today' : `${daysAgoFunction(job?.createdAt)} days ago`}</p>
-                <Button size="icon" className="rounded-full" variant="secondary"><Bookmark /></Button>
+        <div className='p-2 rounded-lg shadow-lg bg-gradient-to-r from-white to-gray-50 border border-gray-200'>
+            {/* Job Image and Badges */}
+            <div className='relative w-full'>
+                <img src={job?.image} alt="Job" className='w-full h-52 object-cover rounded-lg' />
+                <Badge 
+                    className='absolute top-3 left-3 bg-white bg-opacity-80 text-gray-800 font-semibold px-4 py-2 rounded-md'
+                    variant={'ghost'}
+                >
+                    {job?.position} positions
+                </Badge>
+
+                <Badge 
+                    className='absolute bottom-3 left-3 bg-white bg-opacity-80 text-gray-800 font-semibold px-4 py-2 rounded-md'
+                    variant={'ghost'}
+                >
+                    {job?.experienceLevel} year
+                </Badge>
+
+                <Badge 
+                    className='absolute bottom-3 right-3 bg-white bg-opacity-80 text-gray-800 font-semibold px-4 py-2 rounded-md'
+                    variant={'ghost'}
+                >
+                    {job?.salary} 
+                </Badge>
             </div>
-            <div className='flex items-center gap-2 my-2'>
-                <Button size='icon' variant="outline" className="p-6">
-                    <Avatar>
-                        <AvatarImage src={job?.company?.logo} />
-                    </Avatar>
+
+            {/* Job Details */}
+            <div className='mt-4'>
+                <h1 className='font-bold text-xl text-gray-800'>{job?.title}</h1>
+                <p className='text-sm text-gray-500 mt-2 truncate'>{job?.description}</p>
+            </div>
+
+             
+
+            {/* Action Buttons */}
+            <div className='flex justify-between items-center mt-4'>
+                <Button 
+                    onClick={() => navigate(`/description/${job?._id}`)} 
+                    variant="outline" 
+                    className="rounded-lg border-gray-300 text-gray-700"
+                >
+                    Details
                 </Button>
-                <div>
-                    <h1 className='font-medium text-lg'>{job?.company?.name}</h1>
-                    <p className='text-sm text-gray-500'>India</p>
-                </div>
+                <Button 
+                    onClick={() => setOpen(true)} 
+                    className="bg-[#7209b7] text-white rounded-lg"
+                >
+                    Save For Later
+                </Button>
             </div>
-            <div>
-                <h1 className='font-bold text-lg my-2'>{job?.title}</h1>
-                <p className='text-sm text-gray-600 truncate'>{job?.description}</p>
-            </div>
-            <div className='flex items-center gap-2 mt-4'>
-                <Badge className={'text-blue-700 font-bold'} variant={'ghost'}>{job?.position} positons</Badge>
-                <Badge className={'text-[#F83002] font-bold'} variant={'ghost'}>{job?.jobType}</Badge>
-                <Badge className={'text-[#7209b7] font-bold'} variant={'ghost'}>{job?.salary}LPA</Badge>
-            </div>
-            <div className='flex items-center gap-4 mt-4'>
-                <Button onClick={() => navigate(`/description/${job?._id}`)} variant="outline" className="rounded-lg">Details</Button>
-                <Button className="bg-[#7209b7] rounded-lg">Save For Later</Button>
-            </div>
-            <div>
-                <ApplyJobDialog open={open} setOpen={setOpen} />
-            </div>
+
+            {/* Apply Job Dialog */}
+            <ApplyJobDialog open={open} setOpen={setOpen} />
         </div>
-    )
+    );
 }
 
-export default Job
+export default Job;
